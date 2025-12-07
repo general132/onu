@@ -17,7 +17,7 @@ const participantsData = [
     {
         id: 3,
         name: "Maria Eduarda",
-        role: "Vice-Chair",
+        role: "Chair",
         room: "Conselho de Segurança",
         avatar: "vieira.png"
     },
@@ -1124,4 +1124,5 @@ const apiStatusCSS = `
 // Adicionar CSS dinamicamente
 const style = document.createElement('style');
 style.textContent = apiStatusCSS;
+
 document.head.appendChild(style);
