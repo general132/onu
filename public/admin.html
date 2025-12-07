@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Conteúdo | ONU Legends</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+</head>
+<body class="admin-page">
+    <!-- Cabeçalho com navegação -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="onu1.png" alt="Logo ONU" class="logo">
+                <h1 class="site-title">ONU <span class="title-legends">Legends</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Voltar ao Site</a></li>
+                    <li><a href="#" id="logout-link" class="nav-link logout-btn"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <div class="container">
+            <div class="admin-header">
+                <div class="admin-welcome">
+                    <h2><i class="fas fa-user-circle"></i> Bem-vindo, Jornalista</h2>
+                    <p>Você está logado como: <strong id="journalist-email">jornalista@onu.org</strong> | Jornal: <strong id="journal-name">The New York Times</strong></p>
+                </div>
+            </div>
+            
+            <div class="publish-section">
+                <h2><i class="fas fa-upload"></i> Publicar Conteúdo</h2>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="news">Publicar Notícia</button>
+                    <button class="tab-btn" data-tab="interview">Publicar Entrevista</button>
+                </div>
+                
+                <!-- Formulário para publicar notícias -->
+                <div id="news-tab" class="tab-content active">
+                    <form id="publish-news-form">
+                        <div class="form-group">
+                            <label for="news-title"><i class="fas fa-heading"></i> Título da Notícia</label>
+                            <input type="text" id="news-title" name="news-title" required placeholder="Digite o título da notícia">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="news-committee"><i class="fas fa-users"></i> Comitê</label>
+                            <select id="news-committee" name="news-committee" required>
+                                <option value="">Selecione um comitê</option>
+                                <option value="Inteligência Artificial">Comitê 01 - Inteligência Artificial</option>
+                                <option value="Deslocamentos Climáticos">Comitê 02 - Deslocamentos Climáticos</option>
+                                <option value="Conselho de Segurança">Conselho de Segurança</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="news-excerpt"><i class="fas fa-align-left"></i> Resumo</label>
+                            <textarea id="news-excerpt" name="news-excerpt" rows="4" required placeholder="Digite um resumo da notícia"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="news-content"><i class="fas fa-file-alt"></i> Conteúdo Completo</label>
+                            <textarea id="news-content" name="news-content" rows="8" required placeholder="Digite o conteúdo completo da notícia"></textarea>
+                        </div>
+                        
+                        <div class="form-group file-upload-group">
+                            <label for="news-image"><i class="fas fa-image"></i> Upload da Imagem</label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="news-image" name="news-image" accept="image/*" class="file-input">
+                                <div class="file-upload-area" id="image-upload-area">
+                                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                    <p class="upload-text">Arraste e solte uma imagem ou <span class="upload-link">clique para selecionar</span></p>
+                                    <p class="upload-info">Formatos suportados: JPG, PNG, GIF (Máx. 5MB)</p>
+                                </div>
+                                <div class="file-preview" id="image-preview"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-preview">
+                            <h3><i class="fas fa-eye"></i> Prévia da Notícia</h3>
+                            <div class="preview-card" id="news-preview">
+                                <p><em>O pré-visualização aparecerá aqui após preencher os campos acima.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="preview-news">Ver Prévia</button>
+                            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Publicar Notícia</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Formulário para publicar entrevistas -->
+                <div id="interview-tab" class="tab-content">
+                    <form id="publish-interview-form">
+                        <div class="form-group">
+                            <label for="interview-title"><i class="fas fa-heading"></i> Título da Entrevista</label>
+                            <input type="text" id="interview-title" name="interview-title" required placeholder="Digite o título da entrevista">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interview-committee"><i class="fas fa-users"></i> Comitê</label>
+                            <select id="interview-committee" name="interview-committee" required>
+                                <option value="">Selecione um comitê</option>
+                                <option value="Inteligência Artificial">Comitê 01 - Inteligência Artificial</option>
+                                <option value="Deslocamentos Climáticos">Comitê 02 - Deslocamentos Climáticos</option>
+                                <option value="Conselho de Segurança">Conselho de Segurança</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interview-description"><i class="fas fa-align-left"></i> Descrição</label>
+                            <textarea id="interview-description" name="interview-description" rows="4" required placeholder="Digite uma descrição da entrevista"></textarea>
+                        </div>
+                        
+                        <div class="form-group file-upload-group">
+                            <label for="interview-video"><i class="fas fa-video"></i> Upload do Vídeo</label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="interview-video" name="interview-video" accept="video/*" class="file-input">
+                                <div class="file-upload-area" id="video-upload-area">
+                                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                    <p class="upload-text">Arraste e solte um vídeo ou <span class="upload-link">clique para selecionar</span></p>
+                                    <p class="upload-info">Formatos suportados: MP4, AVI, MOV (Máx. 50MB)</p>
+                                </div>
+                                <div class="file-preview" id="video-preview"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interview-youtube"><i class="fab fa-youtube"></i> Link do YouTube (Opcional)</label>
+                            <input type="text" id="interview-youtube" name="interview-youtube" placeholder="https://www.youtube.com/watch?v=...">
+                            <small>Se não fizer upload de vídeo, você pode inserir um link do YouTube</small>
+                        </div>
+                        
+                        <div class="news-preview">
+                            <h3><i class="fas fa-eye"></i> Prévia da Entrevista</h3>
+                            <div class="preview-card" id="interview-preview">
+                                <p><em>O pré-visualização aparecerá aqui após preencher os campos acima.</em></p>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="preview-interview">Ver Prévia</button>
+                            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Publicar Entrevista</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="publish-section">
+                <h2><i class="fas fa-history"></i> Conteúdo Publicado Recentemente</h2>
+                <p>Aqui estão as suas últimas publicações.</p>
+                
+                <div class="published-content-grid">
+                    <div class="published-news">
+                        <h3><i class="fas fa-newspaper"></i> Últimas Notícias Publicadas</h3>
+                        <!-- Conteúdo dinâmico será carregado aqui -->
+                    </div>
+                    
+                    <div class="published-interviews">
+                        <h3><i class="fas fa-video"></i> Últimas Entrevistas Publicadas</h3>
+                        <!-- Conteúdo dinâmico será carregado aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="logo-container">
+                    <img src="onu1.png" alt="Logo ONU" class="logo">
+                    <h3 class="footer-title">ONU <span class="title-legends">Legends</span></h3>
+                </div>
+                <p class="footer-description">Simulação das Nações Unidas para estudantes</p>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Suporte Jornalistas</h4>
+                <p><i class="fas fa-envelope"></i> bruno.44424@edu.santanadeparnaiba.sp.gov.br</p>
+                <p><i class="fas fa-phone"></i>+55 11 94821-8070</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year-admin">2023</span> ONU Legends - Simulação Acadêmica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+<!-- NO FINAL DO BODY, ANTES do login.js -->
+<script src="auth.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

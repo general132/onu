@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Área do Jornalista | ONU Legends</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+</head>
+<body class="login-page">
+    <!-- Cabeçalho com navegação -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="onu1.png" alt="Logo ONU" class="logo">
+                <h1 class="site-title">ONU <span class="title-legends">Legends</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Voltar ao Site</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h2><i class="fas fa-lock"></i> Área do Jornalista</h2>
+                <p>Faça login para publicar notícias e entrevistas</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-key"></i> Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                </div>
+                
+                <div class="form-group">
+                    <label for="journal"><i class="fas fa-newspaper"></i> Jornal</label>
+                    <select id="journal" name="journal" required>
+                        <option value="">Selecione seu jornal</option>
+                        <option value="newyork">The New York Times</option>
+                        <option value="estadao">Estadão</option>
+                        <option value="diario">Diário do Povo</option>
+                        <option value="monde">Le Monde</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Manter-me conectado</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </button>
+                
+                <div class="login-info">
+                    <p><i class="fas fa-info-circle"></i> Use as credenciais fornecidas pela organização da ONU Legends</p>
+                    <p>Se não tem credenciais, entre em contato com o suporte.</p>
+                </div>
+            </form>
+            
+            <div class="login-features">
+                <h3><i class="fas fa-star"></i> Recursos da Área do Jornalista</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Publicar novas notícias</li>
+                    <li><i class="fas fa-check-circle"></i> Adicionar entrevistas em vídeo</li>
+                    <li><i class="fas fa-check-circle"></i> Fazer upload de imagens e vídeos</li>
+                    <li><i class="fas fa-check-circle"></i> Gerenciar conteúdo publicado</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <div class="logo-container">
+                    <img src="onu1.png" alt="Logo ONU" class="logo">
+                    <h3 class="footer-title">ONU <span class="title-legends">Legends</span></h3>
+                </div>
+                <p class="footer-description">Simulação das Nações Unidas para estudantes</p>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Suporte Jornalistas</h4>
+                <p><i class="fas fa-envelope"></i> bruno.44424@edu.santanadeparnaiba.sp.gov.br</p>
+                <p><i class="fas fa-phone"></i> +55 11 94821-8070</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="current-year-login">2023</span> ONU Legends - Simulação Acadêmica. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+<!-- NO FINAL DO BODY, ANTES do login.js -->
+<script src="auth.js"></script>
+<script src="login.js"></script>
+    
+</body>
+</html>

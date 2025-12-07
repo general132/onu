@@ -1,0 +1,1686 @@
+/* Reset e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #0065b3;
+    --secondary-blue: #0a4297;
+    --dark-blue: #003c71;
+    --light-blue: #e6f2ff;
+    --accent-gold: #ffcc00;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --gray-medium: #777777;
+    --gray-dark: #333333;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-blue);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-gold);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--gray-medium);
+    margin-bottom: 50px;
+}
+
+/* Cabeçalho - TEXTO CENTRALIZADO */
+.header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.title-legends {
+    color: var(--accent-gold);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    position: relative;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-blue);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-gold);
+    bottom: -5px;
+    left: 0;
+}
+
+.nav-link.login-btn {
+    background-color: var(--primary-blue);
+    color: var(--white) !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.nav-link.login-btn:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+/* CORREÇÃO: Remover o outline amarelo do foco */
+.nav-link:focus,
+.nav-link.login-btn:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 2px rgba(0, 101, 179, 0.2); /* Substituir por sombra sutil */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark-blue);
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.menu-toggle:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 2px rgba(0, 101, 179, 0.2);
+}
+
+/* Banner principal */
+.hero {
+    background: linear-gradient(rgba(0, 60, 113, 0.85), rgba(0, 60, 113, 0.9)), url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 180px 0 100px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.hero-btn:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.hero-btn:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.4);
+}
+
+/* Seção Sobre */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    max-height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Filtros para notícias e entrevistas */
+.filter-container {
+    margin-bottom: 40px;
+}
+
+.news-filter, .interview-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: var(--white);
+    border: 2px solid var(--light-blue);
+    border-radius: 30px;
+    color: var(--dark-blue);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 120px;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+.filter-btn:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(0, 101, 179, 0.3);
+}
+
+/* Grade de Notícias - LAYOUT CORRIGIDO */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-top: 4px solid var(--accent-gold);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* NOTÍCIA EM DESTAQUE - CORRIGIDO */
+.news-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+}
+
+.news-card.featured .news-image {
+    height: 100%;
+    min-height: 400px;
+}
+
+.news-card.featured .news-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-category {
+    display: inline-block;
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.news-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+    line-height: 1.3;
+}
+
+.news-card.featured .news-title {
+    font-size: 1.8rem;
+}
+
+.news-excerpt {
+    color: var(--gray-medium);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.news-card.featured .news-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--gray-light);
+    font-size: 0.9rem;
+}
+
+.news-date {
+    color: var(--gray-medium);
+    font-weight: 500;
+}
+
+.news-read-more {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.news-read-more:hover {
+    color: var(--secondary-blue);
+    gap: 8px;
+}
+
+.news-read-more:focus {
+    outline: none !important; /* Remover outline amarelo */
+    text-decoration: underline;
+}
+
+.news-read-more i {
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+/* ===== ESTILOS PARA ENTREVISTAS - VERSÃO FINAL ===== */
+
+/* Container principal das entrevistas */
+.interview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Card de entrevista */
+.interview-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid #eaeaea;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.interview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.interview-card:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(0, 101, 179, 0.3);
+}
+
+/* Container do vídeo/thumbnail */
+.interview-video {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Thumbnail do YouTube */
+.interview-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.interview-card:hover .interview-thumbnail {
+    transform: scale(1.05);
+}
+
+/* Preview para vídeo local */
+.local-video-preview {
+    height: 100%;
+    background: linear-gradient(135deg, #0065b3, #0099cc);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.local-video-preview i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.video-badge {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Preview para entrevistas sem vídeo (apenas transcrição) */
+.committee-preview {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cores específicas para cada comitê */
+.committee-ai {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+}
+
+.committee-climate {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+}
+
+.committee-security {
+    background: linear-gradient(135deg, #9C27B0, #673AB7);
+}
+
+.committee-default {
+    background: linear-gradient(135deg, #0065b3, #0099cc);
+}
+
+.committee-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.committee-icon i {
+    font-size: 2.5rem;
+}
+
+.committee-transcript-badge {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.committee-name-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Overlay de play */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 101, 179, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.interview-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    color: white;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.interview-card:hover .play-icon {
+    transform: scale(1.1);
+}
+
+/* Informações da entrevista */
+.interview-info {
+    padding: 20px;
+}
+
+.interview-journal {
+    display: block;
+    color: #0065b3;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interview-title {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+    color: var(--gray-dark);
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.interview-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-medium);
+    font-size: 13px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.interview-date {
+    color: #999;
+}
+
+.interview-committee {
+    color: #0065b3;
+    font-weight: 600;
+    background: #f0f7ff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Indicador de transcrição */
+.transcript-indicator {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #0065b3;
+    font-size: 13px;
+    color: #0065b3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.interview-card:hover .transcript-indicator {
+    background: #0065b3;
+    color: white;
+}
+
+.transcript-indicator i {
+    font-size: 14px;
+}
+
+/* Seção de Participantes */
+.participants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.participant-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 4px solid var(--primary-blue);
+    height: 100%;
+}
+
+.participant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.participant-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 4px solid var(--light-blue);
+}
+
+.participant-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.participant-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--dark-blue);
+}
+
+.participant-role {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.participant-room {
+    color: var(--gray-medium);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo .logo-container {
+    margin-bottom: 15px;
+}
+
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-list {
+    list-style: none;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    display: inline-block;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.footer-list a:hover {
+    opacity: 1;
+    padding-left: 8px;
+    color: var(--accent-gold);
+}
+
+.footer-list a:focus {
+    outline: none !important; /* Remover outline amarelo */
+    color: var(--accent-gold);
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    opacity: 0.8;
+    font-size: 0.95rem;
+}
+
+.footer-contact i {
+    width: 20px;
+    text-align: center;
+    color: var(--accent-gold);
+    margin-top: 3px;
+}
+
+.footer-bottom {
+    background-color: var(--secondary-blue);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Modal de Notícias */
+.news-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+}
+
+.news-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.news-modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-blue);
+    border: none;
+    font-size: 1.2rem;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.modal-close:hover {
+    background-color: var(--secondary-blue);
+    transform: rotate(90deg);
+}
+
+.modal-close:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.modal-header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-category {
+    display: inline-block;
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+    line-height: 1.3;
+}
+
+.modal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-medium);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-image {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.modal-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.modal-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-dark);
+}
+
+.modal-text p {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.modal-btn {
+    padding: 12px 25px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.modal-btn:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+.modal-btn:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.share-btn {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+}
+
+.share-btn:hover {
+    background-color: #e6c258;
+}
+
+/* Modal de Entrevista */
+.interview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.interview-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.interview-modal .modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.interview-modal .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.interview-modal .modal-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.interview-modal .modal-close:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.interview-modal .modal-header {
+    padding: 30px 30px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.interview-modal .modal-category {
+    background: #0065b3;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.interview-modal .modal-title {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.interview-modal .modal-meta {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.interview-modal .modal-body {
+    padding: 20px 30px;
+}
+
+.interview-modal .modal-video {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.interview-modal .modal-video iframe,
+.interview-modal .modal-video video {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 8px;
+}
+
+.interview-modal .modal-transcription {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #0065b3;
+}
+
+.interview-modal .modal-transcription h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.interview-modal .modal-transcription h3 i {
+    color: #0065b3;
+}
+
+.interview-modal .transcription-content {
+    line-height: 1.6;
+    color: #555;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.interview-modal .modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: #f8f9fa;
+}
+
+.interview-modal .modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    outline: none; /* REMOVER OUTLINE PADRÃO */
+}
+
+.interview-modal .modal-btn:first-child {
+    background: #6c757d;
+    color: white;
+}
+
+.interview-modal .modal-btn:first-child:hover {
+    background: #5a6268;
+}
+
+.interview-modal .modal-btn:focus {
+    outline: none !important; /* Remover outline amarelo */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.interview-modal .share-btn {
+    background: #0065b3;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.interview-modal .share-btn:hover {
+    background: #0056a3;
+}
+
+/* Mensagem quando não há notícias */
+.no-news {
+    text-align: center;
+    padding: 40px;
+    color: var(--gray-medium);
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+    background: var(--gray-light);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .news-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    .interview-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .news-card.featured {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-card.featured .news-image {
+        height: 250px;
+        min-height: auto;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--white);
+        transition: var(--transition);
+        z-index: 999;
+        padding: 20px;
+        box-shadow: var(--shadow);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .nav-list li {
+        width: 100%;
+    }
+    
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+        display: block;
+        border-bottom: 1px solid var(--gray-light);
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .nav-link.login-btn {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero {
+        padding: 140px 0 60px;
+        margin-top: 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .news-card.featured {
+        grid-column: 1 / -1;
+    }
+    
+    .news-title {
+        font-size: 1.2rem;
+    }
+    
+    .news-card.featured .news-title {
+        font-size: 1.5rem;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .participants-grid,
+    .interview-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .interview-title {
+        font-size: 1.1rem;
+    }
+    
+    .interview-video {
+        height: 180px;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+    }
+    
+    .modal-title {
+        font-size: 1.5rem;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .interview-modal .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .interview-modal .modal-video iframe,
+    .interview-modal .modal-video video {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .news-filter,
+    .interview-filter {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .news-image {
+        height: 180px;
+    }
+    
+    .interview-video {
+        height: 160px;
+    }
+    
+    .committee-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .committee-icon i {
+        font-size: 2rem;
+    }
+    
+    .modal-header {
+        padding: 20px 20px 15px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .modal-footer {
+        padding: 15px 20px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-card,
+.interview-card,
+.participant-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.news-card:nth-child(1) { animation-delay: 0.1s; }
+.news-card:nth-child(2) { animation-delay: 0.2s; }
+.news-card:nth-child(3) { animation-delay: 0.3s; }
+.news-card:nth-child(4) { animation-delay: 0.4s; }
+.news-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* ===== CORREÇÃO: REMOVER ESTILOS DE FOCUS AMARELOS ===== */
+/* REMOVER COMPLETAMENTE OS ESTILOS QUE CAUSAM AS LINHAS AMARELAS */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+    outline: none !important; /* Remover completamente o outline amarelo */
+    box-shadow: none !important; /* Remover sombras também se houver */
+}
+
+/* Para acessibilidade, manter um estilo de foco sutil para navegação por teclado */
+.nav-link:focus-visible,
+.nav-link.login-btn:focus-visible,
+.filter-btn:focus-visible,
+.hero-btn:focus-visible,
+.news-read-more:focus-visible,
+.modal-btn:focus-visible,
+.modal-close:focus-visible {
+    outline: 2px solid rgba(0, 101, 179, 0.5) !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 101, 179, 0.2);
+}
+
+/* Estilo de foco sutil para elementos interativos */
+.interview-card:focus-visible {
+    outline: 2px solid rgba(0, 101, 179, 0.5) !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 101, 179, 0.2);
+}
+
+/* Remover outline do menu toggle no mobile */
+.menu-toggle:focus-visible {
+    outline: 2px solid rgba(0, 101, 179, 0.5) !important;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 101, 179, 0.2);
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+/* Estilos para quando o menu está aberto */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Estilos para elementos vazios */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-medium);
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--light-blue);
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Estilos para scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-blue);
+}
+
+/* Estilos para seleção de texto */
+::selection {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+}
+
+::-moz-selection {
+    background-color: var(--accent-gold);
+    color: var(--dark-blue);
+}
+
+/* CORREÇÃO ADICIONAL: Remover qualquer outline do navegador */
+*:focus {
+    outline: none !important;
+}
+
+*:focus-visible {
+    outline: 2px solid rgba(0, 101, 179, 0.5) !important;
+    outline-offset: 2px;
+}
